@@ -9,41 +9,49 @@
     <link rel="stylesheet" href="styles.css">
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
-<body>
+<body onload="loadExistingCards()">
   <!-- Modal -->
- <div class="modal fade"
+ <div class="modal fade "
       id="newcardmodal" 
       tabindex="-1" 
       aria-labelledby="newCardModalLabel" 
       aria-hidden="true">
-  <div class="modal-dialog">
+  <div class="modal-dialog ">
     <div class="modal-content">
-      <div class="modal-header">
+      <div class="modal-header" 
+          style="background-color:#0c0b09;
+          color:white;
+          ">
         <h5 class="modal-title" 
         id="newCardModalLabel">Add New Task</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
-      <div class="modal-body">
+      <div class="modal-body bg">
         <div class="mb-3">
-            <label for="imgurl" class="form-label">Image URL</label>
-            <input type="url" class="form-control" id="imgurl" placeholder="Image Url">
+            <label for="imgurl" class="form-label text-col">Image URL</label>
+            <input type="url" class="form-control input-style" id="imgurl" placeholder="Image Url">
         </div>
         <div class="mb-3">
-            <label for="tasktitle" class="form-label">Task Title</label>
-            <input type="text" class="form-control" id="tasktitle"  placeholder="Task Title">
+            <label for="tasktitle" class="form-label text-col">Task Title</label>
+            <input type="text" class="form-control input-style" id="tasktitle"  placeholder="Task Title">
         </div>
         <div class="mb-3">
-            <label for="tasktype" class="form-label">Task Type</label>
-            <input type="text" class="form-control" id="tasktype" placeholder="Task type">
+            <label for="tasktype" class="form-label text-col">Task Type</label>
+            <input type="text" class="form-control input-style" id="tasktype" placeholder="Task type">
         </div>
         <div class="mb-3">
-            <label for="taskdescription" class="form-label">Task Description</label>
-            <textarea id="taskdescription" class="form-control"  rows="5"  placeholder="Task description"></textarea>
+            <label for="taskdescription" class="form-label text-col">Task Description</label>
+            <textarea id="taskdescription" class="form-control input-style"   rows="5"  placeholder="Task description"></textarea>
         </div>
     </div>
-      <div class="modal-footer">
+      <div class="modal-footer" style="background-color:#0b0c09;">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+        <button type="button" 
+                class="btn btn-primary"
+                onclick="addNewCard()"
+                data-bs-dismiss="modal">
+                
+                Save changes</button>
       </div>
     </div>
   </div>
@@ -87,40 +95,11 @@
         </div>
       </section>
       <!-- Task Container-->
-      <section class="task_container row">
-        <div class="col-md-6 col-lg-4 mt-3" id=${id}>
-          <div class="card">
-            <div class="card-header ">
-              <div class="d-flex justify-content-end gap-2">
-               <button type="button" class="btn btn-outline-info" name=${id} onclick="editTask(this)">
-                 <i class="fas fa-pencil-alt"></i>
-               </button>
-               <button type="button" class="btn btn-outline-danger" name=${id} onclick="deleteTask(this)">
-                 <i class="far fa-trash-alt" ></i>
-               </button>
-              </div> 
-            </div>
-            <div>
-              <img src="https://th.bing.com/th/id/OIP.1YM53mG10H_U25iPjop83QHaEo?pid=ImgDet&rs=1" class="card-img-top" alt="image">
-            </div>
-            <div class="card-body">
-              <h5 class="card-title">Hello</h5>
-              <p class="card-text">Entertainment</p>
-              <span class="badge bg-primary">Fun</span>
-            </div>
-            <div class="card-footer">
-              <button class="btn btn-outline-primary float-end">
-                Open Task
-              </button>
-            </div>
-          </div>
-         </div>
-
+      <section class="taskcontainer row">
          
       </section>
     </main>
-
-
+    
     <script src="app.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ" crossorigin="anonymous"></script>
 </body>
