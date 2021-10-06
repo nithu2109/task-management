@@ -10,6 +10,44 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.7/js/all.js"></script>
 </head>
 <body>
+  <!-- Modal -->
+ <div class="modal fade"
+      id="newcardmodal" 
+      tabindex="-1" 
+      aria-labelledby="newCardModalLabel" 
+      aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" 
+        id="newCardModalLabel">Add New Task</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="mb-3">
+            <label for="imgurl" class="form-label">Image URL</label>
+            <input type="url" class="form-control" id="imgurl" placeholder="Image Url">
+        </div>
+        <div class="mb-3">
+            <label for="tasktitle" class="form-label">Task Title</label>
+            <input type="text" class="form-control" id="tasktitle"  placeholder="Task Title">
+        </div>
+        <div class="mb-3">
+            <label for="tasktype" class="form-label">Task Type</label>
+            <input type="text" class="form-control" id="tasktype" placeholder="Task type">
+        </div>
+        <div class="mb-3">
+            <label for="taskdescription" class="form-label">Task Description</label>
+            <textarea id="taskdescription" class="form-control"  rows="5"  placeholder="Task description"></textarea>
+        </div>
+    </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
     <nav class="navbar navbar-expand-lg navbar-dark  custom ">
         <div class="container-fluid">
             <a class="navbar-brand fs-4" href="#" style="color:#ffc107;"><u>Tasky</u></a>
@@ -23,7 +61,10 @@
                       <a class="nav-link active" aria-current="page" href="#" style="color:#ffc107;">Home</a>
                  </li>
                </ul>
-               <button class="btn btn-dark btn-outline-warning" data-bs-toggle="modal" data-bs-target="#newcardmodal">
+               <button class="btn btn-dark btn-outline-warning" 
+                       type="button" 
+                       data-bs-toggle="modal" 
+                       data-bs-target="#newcardmodal">
                 ADD NEW <i class="fas fa-plus"></i> 
               </button>
             </div>
@@ -33,7 +74,7 @@
     <main class="container">
       <section class="row justify-content-center mt-5">
         <div class="col-md-8 col-lg-6"> 
-          <div class="input-group mb-3 ">
+          <div class="input-group mb-3 shadow">
           <input type="search" 
                  class="form-control custom-input" 
                  placeholder="Search Task" 
@@ -44,6 +85,38 @@
           </span>
           </div>
         </div>
+      </section>
+      <!-- Task Container-->
+      <section class="task_container row">
+        <div class="col-md-6 col-lg-4 mt-3" id=${id}>
+          <div class="card">
+            <div class="card-header ">
+              <div class="d-flex justify-content-end gap-2">
+               <button type="button" class="btn btn-outline-info" name=${id} onclick="editTask(this)">
+                 <i class="fas fa-pencil-alt"></i>
+               </button>
+               <button type="button" class="btn btn-outline-danger" name=${id} onclick="deleteTask(this)">
+                 <i class="far fa-trash-alt" ></i>
+               </button>
+              </div> 
+            </div>
+            <div>
+              <img src="https://th.bing.com/th/id/OIP.1YM53mG10H_U25iPjop83QHaEo?pid=ImgDet&rs=1" class="card-img-top" alt="image">
+            </div>
+            <div class="card-body">
+              <h5 class="card-title">Hello</h5>
+              <p class="card-text">Entertainment</p>
+              <span class="badge bg-primary">Fun</span>
+            </div>
+            <div class="card-footer">
+              <button class="btn btn-outline-primary float-end">
+                Open Task
+              </button>
+            </div>
+          </div>
+         </div>
+
+         
       </section>
     </main>
 
