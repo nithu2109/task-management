@@ -19,3 +19,17 @@ body{
     color: white;
 
 }
+.input-style{
+    border-radius: 0;
+    box-shadow: none;
+    font-size: 14px;
+    background: #0c0b09;
+    border-color: #625b4b;
+    color: white;
+}
+.bg{
+    background-color:black;
+}
+.text-col{
+    color: white;
+}
