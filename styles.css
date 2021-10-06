@@ -1,0 +1,9 @@
+.custom{
+   /* background: rgba(12, 11, 9, 0.6);*/
+    border-bottom: 1px solid rgba(12, 11, 9, 0.6);
+    transition: all 0.5s;
+    z-index: 997;
+    padding: 15px 0;
+    background-color: black;
+
+}
